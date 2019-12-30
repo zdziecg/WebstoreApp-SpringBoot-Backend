@@ -1,0 +1,258 @@
+body
+{
+    margin: 0;
+    background-color: rgb(245, 245, 244);
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    /*background-image: url("../../static/images/lab2.jpg");*/
+    background-image: url('../images/background/lab1.jpg');
+
+    background-attachment: fixed
+}
+nav
+{
+    text-align: center;
+}
+
+.menu
+{
+    list-style-type: none;
+    margin: 0px;
+    padding: 10px;
+    font-size: 18px;
+    min-height: 40px;
+    line-height: 200%;
+    margin-top: 0px;
+    margin-bottom: 40px;
+}
+a.tilelink
+{
+    color: #0e0d0d;
+    text-decoration: none;
+}
+.menu > li
+{
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+h1.logo
+{ 
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 5px;
+    margin-right: 100px;
+    font-size: 48px;
+}
+.menu a
+{
+    color: black;
+    text-decoration: none;
+}
+.menu a:hover
+{
+    color: black;
+    font-weight: bold;
+}
+.shop
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    text-align: center;
+    padding: 0;
+    background-color: rgba(24, 109, 164, 0.2);
+    background: rgba(24, 109, 164, 0.2);
+    color: rgb(0, 0, 0);
+}
+h1
+{
+font-size: 44px;
+font-weight: 400;
+margin-bottom: 20px;
+}
+.product
+{
+    display: inline-block;
+    margin-top: 10px;
+    
+}
+.product a
+{
+    opacity: 90%;
+}
+.product a:hover
+{
+    opacity: 100%;
+}
+
+figure
+{
+    margin: 8px;
+    padding: 0;
+}
+figcaption
+{
+    margin-top: 8px;
+padding: 0;
+}
+.aboutUs
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    text-align: center;
+    padding: 0;
+}
+.kadra
+{
+    margin-top: 30px;
+    border-radius: 5px;
+    background-color: rgba(24, 109, 164, 0.2);
+    background: rgba(24, 109, 164, 0.2);
+    color: rgb(0, 0, 0);
+}
+.kadraimg
+{
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    display: inline-block;
+    width: 200px;
+    
+
+}
+.kadraimg img
+{
+    width: 140px;
+    height: 180px;
+}
+.kadratxt
+{
+    display: inline-block;
+    width: 480px;
+    
+}
+.contact
+{
+    width: 960px;
+    background-color: rgba(24, 109, 164, 0.2);
+    background: rgba(24, 109, 164, 0.2);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding-bottom: 70px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contact p
+{
+    margin-bottom: 50px;
+}
+
+.bluebutton
+{
+    
+    background-color: rgb(0, 140, 255);
+    padding: 15px;
+    color: cornsilk;
+    font-size: 19px;
+    text-decoration: none;
+    border-radius: 5px;
+     min-width: 300px;
+}
+.bluebutton:hover
+{
+    background-color: rgb(0, 26, 255);
+}
+.socials
+{
+    width: 960px;
+    background-color: rgba(24, 109, 164, 0.2);
+    background: rgba(24, 109, 164, 0.2);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.yt
+{
+    margin: 30px;
+    margin-left: 70px;
+    width: 160px;
+    height: 160px;
+    background-color: #d94348;
+    float:  left;
+    cursor: pointer;
+	filter: brightness(90%);
+	transition: all .3s ease-in-out;
+}
+.yt:hover 
+{
+    filter: brightness(100%);
+    border-radius: 4px;
+
+}
+.fb
+{
+    margin: 30px;
+    width: 160px;
+    height: 160px;
+    background-color: #4668b3;
+    float:  left;
+    cursor: pointer;
+	filter: brightness(90%);
+	transition: all .3s ease-in-out;
+}
+.fb:hover
+{
+    filter: brightness(100%);
+    border-radius: 4px;
+
+}
+.insta
+{
+    margin: 30px;
+    width: 160px;
+    height: 160px;
+    background-color: #c72dcc;
+    float:  left;
+    cursor: pointer;
+	filter: brightness(90%);
+	transition: all .3s ease-in-out;
+}
+.insta:hover 
+{
+    filter: brightness(100%);
+    border-radius: 4px;
+
+}
+.gp
+{
+    margin: 30px;
+    width: 160px;
+    height: 160px;
+    background-color: #d94348;
+    float:  left;
+    cursor: pointer;
+	filter: brightness(90%);
+	transition: all .3s ease-in-out;
+}
+.gp:hover 
+{
+    filter: brightness(100%);
+    border-radius: 4px;
+
+}
+.info
+{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+

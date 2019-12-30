@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:spring="http://jboss.org/xml/ns/javax/validation/mapping"
+      xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Produkty</h1>
+<p>Dodawanie produktów</p>
+
+
+    <form th:action="@{/add}" th:object="${newProduct}" method="post">
+        <table border="1">
+            <tr>
+                <td><label>Id produktu</label></td>
+                <td><input type="text" th:field="*{productId}" /></td>
+            </tr>
+            <tr>
+                <td><label>Nazwa</label></td>
+                <td><input type="text" th:field="*{name}" /></td>
+            </tr>
+            <tr>
+                <td><label>Cena</label></td>
+                <td><input type="number" th:field="*{price}" /></td>
+            </tr>
+            <tr>
+                <td><label>Opis</label></td>
+                <td><input type="text" th:field="*{description}" /></td>
+            </tr>
+            <tr>
+                <td><label>Producent</label></td>
+                <td><input type="text" th:field="*{manufacturer}" /></td>
+            </tr>
+            <tr>
+                <td><label>Kategoria</label></td>
+                <td><input type="text" th:field="*{category}" /></td>
+            </tr>
+            <tr>
+                <td><label>Ilość sztuk w magazynie</label></td>
+                <td><input type="text" th:field="*{unitsInStock}" /></td>
+            </tr>
+            <tr>
+                <td><label>Ilość sztuk w zamówieniu</label></td>
+                <td><input type="text" th:field="*{unitsInOrder}" /></td>
+            </tr>
+
+
+
+
+        </table>
+        <p>
+        <td>Stan produktu</td>
+        <td><input type="checkbox" th:field="*{condition}" value="New" />Nowy</td>
+        <td><input type="checkbox" th:field="*{condition}" value="Old" />Używany</td>
+        <td><input type="checkbox" th:field="*{condition}" value="Refurbished" />Odnowiony</td>
+        </p>
+<!--        <p>-->
+<!--            Id: <input type="text" th:field="*{productId}">-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            Nazwa: <input type="text" th:field="*{name}">-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            Cena: <input type="number" th:field="*{unitPrice}">-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            Opis: <input type="text" th:field="*{description}">-->
+<!--        </p>-->
+
+<!--        <p>-->
+<!--            category: <input type="text" th:field="*{category}">-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            unitsInStock: <input type="number" th:field="*{unitsInStock}">-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            unitsInOrder: <input type="number" th:field="*{unitsInOrder}">-->
+<!--        </p>-->
+<!--        p>-->
+<!--        bollean: <input type="text" th:field="*{condition}">-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            condition: <input type="text" th:field="*{condition}">-->
+<!--        </p>-->
+<!--        <div class="form-group">-->
+<!--            <label class="control-label col-lg-2" for="productImage">-->
+<!--                <spring:message code="addProdcut.form.productImage.label"/>-->
+<!--            </label>-->
+<!--            <div class="col-lg-10">-->
+<!--                <form th:input id="productImage" path="productImage" type="file"class="form:input-large"></form>-->
+<!--            </div>-->
+<!--        </div>-->
+        <tr>
+            <td><input type="submit" value="Submit" /></td>
+        </tr>
+        <p>
+            <input type="submit" value="Potwierdź"/>
+            <input type="reset" value="Resetuj">
+        </p>
+    </form>
+</body>
+</html>
+
