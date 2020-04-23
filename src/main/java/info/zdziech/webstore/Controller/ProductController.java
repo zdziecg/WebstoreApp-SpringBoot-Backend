@@ -1,9 +1,7 @@
-package info.zdziech.webstore.Controllers;
+package info.zdziech.webstore.Controller;
 
-import info.zdziech.webstore.Repository.ProductRepository;
-import info.zdziech.webstore.Services.ProductService;
-import info.zdziech.webstore.ShopProducts.Basket;
-import info.zdziech.webstore.ShopProducts.Product;
+import info.zdziech.webstore.Service.ProductService;
+import info.zdziech.webstore.Model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +9,6 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
@@ -44,7 +41,7 @@ import java.util.Map;
             return "products";
         }
     @RequestMapping("/product")
-    public String getProductById(@RequestParam("id") String productId, Model model) {
+    public String getProductById(@RequestParam("id") Long productId, Model model) {
         model.addAttribute("product", productService.getProductById(productId));
         return "product";
     }

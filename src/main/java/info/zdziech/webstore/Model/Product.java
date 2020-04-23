@@ -1,48 +1,65 @@
-package info.zdziech.webstore.ShopProducts;
+package info.zdziech.webstore.Model;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public final class Product implements Comparable<Product> {
-    private String productId;
-    private  String name;
-    private  double price;
+
+@Entity
+public final class Product {
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long productId;
+    private String name;
+    private BigDecimal price;
+
     private String description;
     private String manufacturer;
     private String category;
     private long unitsInStock;
     private long unitsInOrder;
-    private boolean discontinued;
-    private String condition;
+    @Transient
     private MultipartFile productImage;
 
-    public MultipartFile getProductImage() {
-        return productImage;
-    }
-
-    public void setProductImage(MultipartFile productImage) {
-        this.productImage = productImage;
-    }
 
 
     public Product() {
-        super();
     }
-    public Product(String productId, String name, double price) {
+
+    public Product(Long productId, String name, BigDecimal price) {
         this.productId = productId;
         this.name = name;
         this.price = price;
+
     }
+
+    public Long getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Long productId) {
+        this.productId = productId;
+    }
+
     public String getName() {
         return name;
     }
 
-    public double getPrice() {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public BigDecimal getPrice() {
         return price;
     }
 
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
 
     public String getDescription() {
         return description;
@@ -84,29 +101,21 @@ public final class Product implements Comparable<Product> {
         this.unitsInOrder = unitsInOrder;
     }
 
-    public boolean isDiscontinued() {
-        return discontinued;
+    public MultipartFile getProductImage() {
+        return productImage;
     }
 
-    public void setDiscontinued(boolean discontinued) {
-        this.discontinued = discontinued;
-    }
-
-    public String getCondition() {
-        return condition;
-    }
-
-    public void setCondition(String condition) {
-        this.condition = condition;
+    public void setProductImage(MultipartFile productImage) {
+        this.productImage = productImage;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Product)) return false;
         Product product = (Product) o;
-        return Double.compare(product.price, price) == 0 &&
-                name.equals(product.name);
+        return getName().equals(product.getName()) &&
+                getPrice().equals(product.getPrice());
     }
 
     @Override
@@ -114,17 +123,6 @@ public final class Product implements Comparable<Product> {
         return Objects.hash(name, price);
     }
 
-    @Override
-    public int compareTo(Product other) {
-        if (other == null) {
-            return 1;
-        }
-        int comparision = this.getName().compareTo(other.getName());
-        if (comparision != 0) {
-            return comparision;
-        }
-        return Double.compare(this.getPrice(), other.getPrice());
-    }
 
     @Override
     public String toString() {
@@ -134,13 +132,7 @@ public final class Product implements Comparable<Product> {
                 ;
     }
 
-    public String getProductId() {
-        return productId;
-    }
 
-    public void setProductId(String productId) {
-        this.productId = productId;
-    }
 }
 
 

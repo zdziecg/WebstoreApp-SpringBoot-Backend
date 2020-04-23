@@ -1,6 +1,6 @@
 package info.zdziech.webstore.Repository;
 
-import info.zdziech.webstore.ShopProducts.Product;
+import info.zdziech.webstore.Model.Product;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
@@ -11,17 +11,17 @@ import java.util.*;
         private List<Product> listOfProducts = new ArrayList<Product>();
         public ProductRepoositoryImpl() {
 
-            Product mleczko = new Product("P1234","Mleczko do ciała EKE", 7.99);
+            Product mleczko = new Product((long) 1234,"Mleczko do ciała EKE", new BigDecimal("7.99"));
             mleczko.setDescription("Intensywne nawilżenie zamknięte w formule mleczka do ciała,");
             mleczko.setCategory("Mleczko");
             mleczko.setManufacturer("EKE");
             mleczko.setUnitsInStock(1000);
-            Product szampon_eke = new Product("P1235","Szmpon do włosów", 20.99);
+            Product szampon_eke = new Product((long) 1235,"Szmpon do włosów", new BigDecimal("20.99"));
             szampon_eke.setDescription("Środek do mycia włosów, zawierający ciekłe mydło, substancje pieniące oraz substancje pomocnicze");
             szampon_eke.setCategory("Szampon");
             szampon_eke.setManufacturer("EKE");
             szampon_eke.setUnitsInStock(777);
-            Product krem = new Product("P1236","Krem do twarzy",24.99);
+            Product krem = new Product((long) 1236,"Krem do twarzy",new BigDecimal("24.99"));
             krem.setDescription(" Krem na noc odżywia, regeneruje i nawilża skórę podczas nocnego odpoczynku");
             krem.setCategory("Krem");
             krem.setManufacturer("Inny");
@@ -34,7 +34,7 @@ import java.util.*;
             return listOfProducts;
         }
 
-        public Product getProductById(String productId) {
+        public Product getProductById(Long productId) {
             Product productById = null;
             for(Product product : listOfProducts) {
                 if(product!=null && product.getProductId()!=null && product.getProductId().equals(productId)){

@@ -14,13 +14,17 @@
     <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
     <link rel="stylesheet" href="../static/css/fontello.css"  th:href="@{/css/fontello.css}"type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link href="../static/css/main.css" rel="stylesheet" media="screen" th:href="@{/css/main.css}"/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" ></script>
 
-    <script type="application/javascript" th:src="@{static/scripts/jquery.scrollTo.min.js}" ></script>
 
-    <script>
+    <script th:src="@{/resources/static/js/jquery.scrollTo.min.js}"></script>
+
+    <script type="application/javascript" th:src="@{static/js/jquery.scrollTo.min.js}" ></script>
+
+    <script type="application/javascript">
         jQuery(function ($) {
             // reset scrolla
             // $.scrollTo(0);
@@ -43,7 +47,7 @@
                 <li>  <a th:href="@{/}" class="tilelink">
                         <h1 class="logo"> Eke - cosmetics </h1>
                         <h2  th:text="${greeting}"></h2>
-                        <p  th:text="${tagline}"><</p>
+<!--                        <h2>Witaj <span th:text="${tagline}"/></h2>-->
                     </a> </li>
                 <li> <a th:href="@{/}" class="tilelink">Strona główna</a></li>
                 <li> <a id="link1" th:href="@{/products}"> Sklep</a></li>

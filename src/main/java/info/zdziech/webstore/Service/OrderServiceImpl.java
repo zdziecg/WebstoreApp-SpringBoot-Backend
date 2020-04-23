@@ -1,7 +1,7 @@
-package info.zdziech.webstore.Services;
+package info.zdziech.webstore.Service;
 
 import info.zdziech.webstore.Repository.ProductRepository;
-import info.zdziech.webstore.ShopProducts.Product;
+import info.zdziech.webstore.Model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
     public class OrderServiceImpl implements OrderService{
         @Autowired
         private ProductRepository productRepository;
-        public void processOrder(String productId, int count) {
+        public void processOrder(Long productId, int count) {
             Product productById = productRepository.getProductById(productId);
             if(productById.getUnitsInStock() < count){
                 throw new IllegalArgumentException("Zbyt mało towaru. Obecna liczba sztuk w magazynie: "+ productById.getUnitsInStock());

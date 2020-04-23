@@ -15,39 +15,36 @@
         <table border="1">
             <tr>
                 <td><label>Id produktu</label></td>
-                <td><input type="text" th:field="*{productId}" /></td>
+                <td><input type="text" name="productId"/>
             </tr>
             <tr>
                 <td><label>Nazwa</label></td>
-                <td><input type="text" th:field="*{name}" /></td>
+                <td><input type="text" name="{name}" /></td>
             </tr>
             <tr>
                 <td><label>Cena</label></td>
-                <td><input type="number" th:field="*{price}" /></td>
+                <td><input type="number" name="*{price}" /></td>
             </tr>
             <tr>
                 <td><label>Opis</label></td>
-                <td><input type="text" th:field="*{description}" /></td>
+                <td><input type="text" name="*{description}" /></td>
             </tr>
             <tr>
                 <td><label>Producent</label></td>
-                <td><input type="text" th:field="*{manufacturer}" /></td>
+                <td><input type="text" name="*{manufacturer}" /></td>
             </tr>
             <tr>
                 <td><label>Kategoria</label></td>
-                <td><input type="text" th:field="*{category}" /></td>
+                <td><input type="text" name="*{category}" /></td>
             </tr>
             <tr>
                 <td><label>Ilość sztuk w magazynie</label></td>
-                <td><input type="text" th:field="*{unitsInStock}" /></td>
+                <td><input type="number" name="*{unitsInStock}" /></td>
             </tr>
             <tr>
                 <td><label>Ilość sztuk w zamówieniu</label></td>
-                <td><input type="text" th:field="*{unitsInOrder}" /></td>
+                <td><input type="text" name="*{unitsInOrder}" /></td>
             </tr>
-
-
-
 
         </table>
         <p>
@@ -56,42 +53,6 @@
         <td><input type="checkbox" th:field="*{condition}" value="Old" />Używany</td>
         <td><input type="checkbox" th:field="*{condition}" value="Refurbished" />Odnowiony</td>
         </p>
-<!--        <p>-->
-<!--            Id: <input type="text" th:field="*{productId}">-->
-<!--        </p>-->
-<!--        <p>-->
-<!--            Nazwa: <input type="text" th:field="*{name}">-->
-<!--        </p>-->
-<!--        <p>-->
-<!--            Cena: <input type="number" th:field="*{unitPrice}">-->
-<!--        </p>-->
-<!--        <p>-->
-<!--            Opis: <input type="text" th:field="*{description}">-->
-<!--        </p>-->
-
-<!--        <p>-->
-<!--            category: <input type="text" th:field="*{category}">-->
-<!--        </p>-->
-<!--        <p>-->
-<!--            unitsInStock: <input type="number" th:field="*{unitsInStock}">-->
-<!--        </p>-->
-<!--        <p>-->
-<!--            unitsInOrder: <input type="number" th:field="*{unitsInOrder}">-->
-<!--        </p>-->
-<!--        p>-->
-<!--        bollean: <input type="text" th:field="*{condition}">-->
-<!--        </p>-->
-<!--        <p>-->
-<!--            condition: <input type="text" th:field="*{condition}">-->
-<!--        </p>-->
-<!--        <div class="form-group">-->
-<!--            <label class="control-label col-lg-2" for="productImage">-->
-<!--                <spring:message code="addProdcut.form.productImage.label"/>-->
-<!--            </label>-->
-<!--            <div class="col-lg-10">-->
-<!--                <form th:input id="productImage" path="productImage" type="file"class="form:input-large"></form>-->
-<!--            </div>-->
-<!--        </div>-->
         <tr>
             <td><input type="submit" value="Submit" /></td>
         </tr>

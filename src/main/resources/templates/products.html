@@ -56,12 +56,14 @@
         <figure>
     <p th:text="' '+ ${product.name} + ' '"></p>
             <img src="../static/images " height="180" width="180"
-                 th:src="@{/images/{id}.jpg(id=${product.productId})}"/>
+                 th:src="@{/images/P{id}.jpg(id=${product.productId})}"/>
             <figcaption>
                 <p th:text="'Cena '+ ${product.price} + ' PLN'"></p>
 <!--                <p th:text="'Opis: '+ ${product.description} + ''"></p>-->
 <!--                <p th:text="'Liczba sztuk w magazynie ' + ${product.unitsInStock}"></p>-->
             </figcaption>
+            <p th:object=" ${product}"></p>
+
         </figure>
 
 
