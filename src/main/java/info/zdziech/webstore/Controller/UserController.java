@@ -34,12 +34,14 @@ import java.util.Collection;
     @GetMapping("/hello")
     public String hello(Principal principal, Model model) {
         model.addAttribute("name", principal.getName());
+        model.addAttribute("user", new User() );
         Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication().getAuthorities();
         Object details = SecurityContextHolder.getContext().getAuthentication().getDetails();
         model.addAttribute("authorities", authorities);
         model.addAttribute("details", details);
         return "hello";
     }
+
 
     @GetMapping("/sign-up")
         public String forUser (Model model) {
@@ -51,6 +53,16 @@ import java.util.Collection;
     public String register (User user) {
         userService.addUser(user);
         return "sign-up";
+    }
+
+    @GetMapping("/login")
+    public String login () {
+        return "login";
+    }
+    @PostMapping("/login")
+    public String login (User user) {
+        userService.addUser(user);
+        return "login";
     }
     @GetMapping("/token")
     public String signup (@RequestParam String value) {

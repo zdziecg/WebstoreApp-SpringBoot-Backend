@@ -22,7 +22,7 @@ public class CartRestController {
     @Autowired
     private ProductService productService;
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = { RequestMethod.POST, RequestMethod.GET })
     public @ResponseBody Cart create(@RequestBody Cart cart){
         return cartService.create(cart);
     }

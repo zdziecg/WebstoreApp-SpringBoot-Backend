@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -33,13 +34,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userDetailsService);
     }
 
+//    public void addViewControllers(ViewControllerRegistry registry) {
+//        //add custom login form view
+//        registry.addViewController("/login").setViewName("login");
+//    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
         http.headers().disable();
         http.authorizeRequests()
-                .antMatchers("/hello").authenticated()
+                .antMatchers("/index").authenticated()
                 .and()
-                .formLogin().defaultSuccessUrl("/hello");
+                .formLogin()
+                .loginPage("/login")
+                .permitAll();
     }
 }

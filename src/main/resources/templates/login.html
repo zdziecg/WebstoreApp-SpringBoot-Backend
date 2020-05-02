@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.springframework.org/schema/security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato&display=swap" rel="stylesheet">
+
+    <link href="../static/css/login.css" th:href="@{/css/login.css}" rel="stylesheet" />
+
+</head>
+<body>
+
+<h2> Formularz logowania</h2>
+
+        <form th:action="@{/login}" method="post" >
+
+
+    <div class="container">
+        <label for="uname"><b>Nazwa użytkownika</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+
+        <label for="psw"><b>Hasło</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+
+        <button type="submit">Zaloguj</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Zapamiętaj
+        </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+        <a th:href="@{/products}">
+            <button type="button" class="cancelbtn">Anuluj</button>
+        </a>
+        <span class="psw">Nie masz konta?
+                <a th:href="@{/sign-up}">
+                    <button type="button" class="returnbtn">
+                        Zarejestruj</button> </a></span>
+    </div>
+</form>
+
+</body>
+</html>
+

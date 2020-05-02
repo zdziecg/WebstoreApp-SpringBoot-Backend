@@ -1,14 +1,21 @@
 package info.zdziech.webstore.Controller;
 
+import info.zdziech.webstore.Model.User;
+import info.zdziech.webstore.Repository.UserRepository;
 import info.zdziech.webstore.Service.ProductService;
 import info.zdziech.webstore.Model.Product;
+import info.zdziech.webstore.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.security.Principal;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -18,10 +25,12 @@ import java.util.Map;
     public class ProductController {
     @Autowired
     private ProductService productService;
+    private UserService userService;
+    private UserRepository userRepository;
 
     @RequestMapping("/all")
     public String allProducts(Model model) {
-        model.addAttribute("products", productService.getAllProducts());
+        model.addAttribute("products", productService.getAllProducts());;
         return "products";
     }
     @RequestMapping

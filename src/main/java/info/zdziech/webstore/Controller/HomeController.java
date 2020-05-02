@@ -9,9 +9,8 @@ import java.security.Principal;
 @Controller
     public class HomeController {
         @RequestMapping("/")
-        public String welcome(Principal principal, Model model) {
+        public String welcome( Model model) {
             model.addAttribute("greeting", "Największy wybór produktów!");
-//            model.addAttribute("name", principal.getName());
             return "index";
         }
     @RequestMapping("/index")

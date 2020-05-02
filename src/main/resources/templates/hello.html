@@ -1,22 +1,68 @@
 
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 
-​Hello <span th:text="${name}"/>
-details:  <span th:text="${details}"/>
-Your role:
-<table>
-    <th:block th:each="auth : ${authorities}">
-        <tr>
-            <td th:text="${auth}">...</td>
-        </tr>
-    </th:block>
-</table>
+<div class="account">
+    <ul>
+        <li id="anonim" sec:authorize="isAnonymous()">
+            ... code 1 ...
+        </li>
+        <li id="your-account" sec:authorize="isAuthenticated()">
+            ... code 2 ...
+        </li>
+        <li >
+            ...
+        </li>
+    </ul>
+</div>
+
+<!--​Hello <span th:text="${name}"/>-->
+<!--Role: <span th:text="${user}"> </span>-->
+<!--details:  <span th:text="${details}"/>-->
+<!--Your role: <td th:text="${auth}">...</td>-->
+<!--        <table>-->
+<!--    <th:block th:each="auth : ${authorities}">-->
+<!--        <tr>-->
+
+<!--            <span th:if sec:authorize="isAuthenticated()">-->
+<!--&gt;Female</span>-->
+<!--                <span th:else>Male</span>-->
+<!--            <div th:switch="auth">-->
+<!--    <span th:case="${CLIENT}">-->
+<!--        <a href="/login">Logowanie  </a> <br>-->
+<!--        <a href="/sign-up">Rejestracja </a>-->
+<!--    </span>-->
+<!--                <span th:case="'ROLE_ADMIN'">Witaj zalogowany </span>-->
+<!--                <span th:case="{ROLE_ADMIN}">Witaj zalogowany </span>-->
+<!--                <span th:case="${authorities = ROLE_ADMIN}">Witaj zalogowany </span>-->
+<!--                <span th:case="${authorities = 'ROLE_ADMIN'}">Witaj zalogowany </span>-->
+
+
+
+<!--                <span th:case="*">Should never happen, but who knows...</span>-->
+<!--            </div>-->
+
+
+
+<!--            <td th:text="${auth}"> <span> Twoja rola </span></td>-->
+<!--            <td th:text="${auth}">...</td>-->
+
+<!--        </tr>-->
+<!--    </th:block>-->
+<!--</table>-->
+<!--<div th:switch="${#authentication}? ${#authorization.expression('isAuthenticated()')} : ${false}">-->
+<!--    <span th:case="${false}">-->
+<!--        <a href="/login">Logowanie  </a> <br>-->
+<!--        <a href="/sign-up">Rejestracja </a>-->
+<!--    </span>-->
+<!--    <span th:case="${true}">Witaj zalogowany </span>-->
+<!--    <span th:case="*">Should never happen, but who knows...</span>-->
+<!--</div>-->
 
 </body>
 </html>
