@@ -11,11 +11,11 @@
     <groupId>info.zdziech</groupId>
     <artifactId>webstore</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>webstore-app</name>
+    <name>webstore</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
-        <java.version>12</java.version>
+        <java.version>1.8</java.version>
     </properties>
 
 
@@ -72,13 +72,7 @@
                 <artifactId>jaxb-api</artifactId>
                 <version>2.3.0</version>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity3 -->
-            <dependency>
-                <groupId>org.thymeleaf.extras</groupId>
-                <artifactId>thymeleaf-extras-springsecurity5</artifactId>
-            </dependency>
         </dependencies>
-
 
 
 
