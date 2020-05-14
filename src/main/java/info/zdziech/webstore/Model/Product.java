@@ -1,8 +1,11 @@
 package info.zdziech.webstore.Model;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Min;
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -11,30 +14,61 @@ import java.util.Objects;
 public final class Product {
 
 
+
+
+//    private String manufacturer;
+//    private String category;
+//    private long unitsInStock;
+//    private long unitsInOrder;
+//    @Transient
+//    private MultipartFile productImage;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "product_id")
     private Long productId;
+
+    @Column(name = "product_name", nullable = false)
+    @Length(min = 3, message = "*Name must have at least 5 characters")
     private String name;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "quantity")
+    @Min(value = 0, message = "*Quantity has to be non negative number")
+    private Integer quantity;
+
+    @Column(name = "price", nullable = false)
+    @DecimalMin(value = "0.00", message = "*Price has to be non negative number")
     private BigDecimal price;
 
-    private String description;
-    private String manufacturer;
-    private String category;
-    private long unitsInStock;
-    private long unitsInOrder;
-    @Transient
-    private MultipartFile productImage;
 
 
+//    public Product() {
+//    }
+//
+//    public Product( String name, BigDecimal price, String description) {
+//        this.name = name;
+//        this.price = price;
+//        this.description = description;
+//    }
+    //    public Product(String name, BigDecimal price, String description, String manufacturer, String category, long unitsInStock, long unitsInOrder, MultipartFile productImage) {
+//        this.name = name;
+//        this.price = price;
+//        this.description = description;
+//        this.manufacturer = manufacturer;
+//        this.category = category;
+//        this.unitsInStock = unitsInStock;
+//        this.unitsInOrder = unitsInOrder;
+//        this.productImage = productImage;
+//    }
 
-    public Product() {
+    public Integer getQuantity() {
+        return quantity;
     }
 
-    public Product(Long productId, String name, BigDecimal price) {
-        this.productId = productId;
-        this.name = name;
-        this.price = price;
-
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
     public Long getProductId() {
@@ -69,45 +103,45 @@ public final class Product {
         this.description = description;
     }
 
-    public String getManufacturer() {
-        return manufacturer;
-    }
-
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public long getUnitsInStock() {
-        return unitsInStock;
-    }
-
-    public void setUnitsInStock(long unitsInStock) {
-        this.unitsInStock = unitsInStock;
-    }
-
-    public long getUnitsInOrder() {
-        return unitsInOrder;
-    }
-
-    public void setUnitsInOrder(long unitsInOrder) {
-        this.unitsInOrder = unitsInOrder;
-    }
-
-    public MultipartFile getProductImage() {
-        return productImage;
-    }
-
-    public void setProductImage(MultipartFile productImage) {
-        this.productImage = productImage;
-    }
+//    public String getManufacturer() {
+//        return manufacturer;
+//    }
+//
+//    public void setManufacturer(String manufacturer) {
+//        this.manufacturer = manufacturer;
+//    }
+//
+//    public String getCategory() {
+//        return category;
+//    }
+//
+//    public void setCategory(String category) {
+//        this.category = category;
+//    }
+//
+//    public long getUnitsInStock() {
+//        return unitsInStock;
+//    }
+//
+//    public void setUnitsInStock(long unitsInStock) {
+//        this.unitsInStock = unitsInStock;
+//    }
+//
+//    public long getUnitsInOrder() {
+//        return unitsInOrder;
+//    }
+//
+//    public void setUnitsInOrder(long unitsInOrder) {
+//        this.unitsInOrder = unitsInOrder;
+//    }
+//
+//    public MultipartFile getProductImage() {
+//        return productImage;
+//    }
+//
+//    public void setProductImage(MultipartFile productImage) {
+//        this.productImage = productImage;
+//    }
 
     @Override
     public boolean equals(Object o) {

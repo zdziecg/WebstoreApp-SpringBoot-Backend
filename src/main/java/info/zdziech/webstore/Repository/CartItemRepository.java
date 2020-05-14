@@ -1,11 +1,12 @@
 package info.zdziech.webstore.Repository;
 
 import info.zdziech.webstore.Model.Cart;
+import info.zdziech.webstore.Model.CartItem;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
 
-public interface CartRepository extends CrudRepository <Cart, Long> {
+public interface CartItemRepository extends CrudRepository <CartItem, Long> {
 
-    Optional<Cart> findById(Cart id);
+
 }

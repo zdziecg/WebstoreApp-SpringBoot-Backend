@@ -1,16 +1,49 @@
 package info.zdziech.webstore.Model;
 
+import javax.persistence.*;
+import javax.persistence.criteria.Order;
 import java.math.BigDecimal;
 import java.util.Objects;
+import java.util.Optional;
 
+@Entity
+@Table(name = "ITEMS")
 public class CartItem {
 
-        private Product product;
-        private int quantity;
-        private BigDecimal totalPrice;
-   public CartItem() {
+
+    @Id
+    @Column(name = "item_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+
+    private long quantity;
+    private BigDecimal totalPrice;
+
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @JoinColumn(name = "product_id")
+    private Product product;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "cart_Id")
+    private Cart cart;
+
+    public CartItem(Optional<Product> product) {
     }
-   public CartItem(Product product) {
+
+    public CartItem(Cart cart, Optional<Product> byId, long quantity) {
+
+    }
+
+
+    public CartItem() {
+    }
+
+    public void setTotalPrice(BigDecimal totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public CartItem(Product product) {
         super();
         this.product = product;
         this.quantity = 1;
@@ -21,21 +54,17 @@ public class CartItem {
     }
         public void setProduct(Product product) {
         this.product = product;
-        this.updateTotalPrice();
     }
-        public int getQuantity() {
+        public long getQuantity() {
         return quantity;
     }
-        public void setQuantity(int quantity) {
+        public void setQuantity(long quantity) {
         this.quantity = quantity;
-        this.updateTotalPrice();
     }
         public BigDecimal getTotalPrice() {
-        return totalPrice;
-    }
-        public void updateTotalPrice() {
         totalPrice = this.product.getPrice().multiply(new
                 BigDecimal(this.quantity));
+        return totalPrice;
     }
 
     @Override

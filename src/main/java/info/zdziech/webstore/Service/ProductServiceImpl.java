@@ -3,32 +3,42 @@ package info.zdziech.webstore.Service;
 import info.zdziech.webstore.Repository.ProductRepository;
 import info.zdziech.webstore.Model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.math.BigDecimal;
+import java.util.Optional;
 
 @Service
 public class ProductServiceImpl implements ProductService{
 
-        @Autowired
-        private ProductRepository productRepository;
-        public List<Product> getAllProducts() {
-            return productRepository.getAllProducts();
-        }
-        public Product getProductById(Long productID) {
-            return productRepository.getProductById(productID);
-        }
-        public List<Product> getProductsByCategory(String category) {
-            return productRepository.getProductsByCategory(category);
-        }
-        public Set<Product> getProductsByFilter(Map<String, List<String>> filterParams) {
-            return productRepository.getProductsByFilter(filterParams);
+    private ProductRepository productRepository;
+
+    @Autowired
+    public ProductServiceImpl(ProductRepository productRepository) {
+        this.productRepository = productRepository;
         }
 
-    public void addProduct(Product product) {
-        productRepository.addProduct(product);
+    @Override
+    public Optional<Product> findById(Long id) {
+        return productRepository.findById(id);
+        }
+
+    @Override
+    public Iterable<Product> findAll() {
+        return productRepository.findAll();
+        }
+
+    @Override
+    public Product save(Product product) {
+        return productRepository.save(product);
+        }
+
+    @Override
+    public void deleteById(Long id) {
+        productRepository.deleteById(id);
     }
+
 }
 
