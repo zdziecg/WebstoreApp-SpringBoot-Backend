@@ -1,39 +1,47 @@
 -- DROP TABLE IF EXISTS product;
---
+
 -- create table PRODUCT
 -- (
 --     product_id   INTEGER auto_increment,
 --     product_name VARCHAR not null,
+--     category varchar,
 --     description  VARCHAR not null,
---     quantity     INTEGER,
+--     unitsInStock     INTEGER,
 --     price        DECIMAL not null
 -- );
 
-INSERT INTO PRODUCT (product_name, description, quantity, price)
-VALUES ('Soap', 'Pears baby soap for Kids', 1, 35.75);
-INSERT INTO PRODUCT ( product_name, description, quantity, price)
-VALUES ('Tooth Brush', 'Signal Tooth Brushes Size in (L, M, S)', 5, 34.50);
-INSERT INTO PRODUCT ( product_name, description, quantity, price)
-VALUES ('Shirt', 'Casual Shirt imported from France', 3, 1500.00);
--- INSERT INTO PRODUCT (product_id, product_name, description, quantity, price)
--- VALUES (4, 'Office Bag', 'Leather bag imported from USA', 40, 1000.00);
--- INSERT INTO PRODUCT (product_id, product_name, description, quantity, price)
--- VALUES (5, 'Bottle', 'Hot Water Bottles', 80, 450.45);
--- INSERT INTO PRODUCT (product_id, product_name, description, quantity, price)
--- VALUES (6, 'Wrist Watch', 'Imported wrist watches from swiss', 800, 2500.00);
--- INSERT INTO PRODUCT (product_id, product_name, description, quantity, price)
--- VALUES (7, 'Mobile Phone', '3G/4G capability', 700, 45000.00);
--- INSERT INTO PRODUCT (product_id, product_name, description, quantity, price)
--- VALUES (8, 'Shampoo', 'Head and Shoulders Shampoo', 500, 300.00);
--- INSERT INTO PRODUCT (product_id, product_name, description, quantity, price)
--- VALUES (9, 'Leather Wallets', 'Imported Leather Wallets from AUS', 1000, 500.00);
--- INSERT INTO PRODUCT (product_id, product_name, description, quantity, price)
--- VALUES (10,'Camera', 'Imported Canon camera from USA', 10, 85000.00);
+INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
+VALUES ('Soap', 'Pears baby soap for Kids','Health', 1, 35.75);
+INSERT INTO PRODUCT ( product_name, description, category, unitsinstock, price)
+VALUES ('Tooth Brush', 'Signal Tooth Brushes Size in (L, M, S)', 'Health', 5, 34.50);
+INSERT INTO PRODUCT ( product_name, description, category, unitsinstock, price)
+VALUES ('Shirt', 'Casual Shirt imported from France','Fashion', 3, 15.00);
+INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
+VALUES ( 'Office Bag', 'Leather bag imported from USA', 'Fashion', 40, 1000.00);
+INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
+VALUES ('Tablet', 'Hot Water Bottles', 'Electronics',80, 450.45);
+INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
+VALUES ('Wrist Watch', 'Imported wrist watches from swiss', 'Electronics',800, 2500.00);
+INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
+VALUES ('Mobile Phone', '3G/4G capability', 'Electronics',700, 45000.00);
+INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
+VALUES ('Shampoo', 'Head and Shoulders Shampoo', 'Health',500, 300.00);
+INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
+VALUES ('Leather Wallets', 'Imported Leather Wallets from AUS', 'Fashion',1000, 500.00);
+INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
+VALUES ('Shoes', 'Imported Canon camera from USA', 'Fashion',10, 85000.00);
+INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
+VALUES ('Ball', 'Head and Shoulders Shampoo', 'Sport',500, 300.00);
+INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
+VALUES ('Laptop', 'Imported Leather Wallets from AUS', 'Electronics',1000, 500.00);
 
-insert into cart ( grand_total)
-values (1);
-insert into  items (quantity, total_price, product_id, cart_id)
-values ( 1,1,1,1);
+
+insert into cart (status,  grand_total)
+values ('created',1);
+insert into  items (quantity, product_id, cart_id)
+values ( 99,1,1);
+insert into  items (quantity, product_id, cart_id)
+values ( 2,2,1);
 
 
 

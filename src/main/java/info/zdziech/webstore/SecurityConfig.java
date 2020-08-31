@@ -1,19 +1,15 @@
 package info.zdziech.webstore;
 
 
-import info.zdziech.webstore.Service.UserDetailsServiceImpl;
+import info.zdziech.webstore.service.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -34,20 +30,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userDetailsService);
     }
 
-//    public void addViewControllers(ViewControllerRegistry registry) {
-//        //add custom login form view
-//        registry.addViewController("/login").setViewName("login");
-//    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable();
-        http.headers().disable();
-        http.authorizeRequests()
-                .antMatchers("/index").authenticated()
-                .and()
-                .formLogin()
-                .loginPage("/login")
-                .permitAll();
+        //for h2 database concole log
+        http.headers().frameOptions().disable();
+        http.csrf().disable().authorizeRequests()
+                .antMatchers("/menage/products/**", "/registeruser", "/checkUserName").permitAll()
+                .antMatchers(HttpMethod.OPTIONS, "/greeting", "/basicauth", "/loginuser", "/user", "**/swagger-resources/**", "/api/orders/**")
+                .permitAll().anyRequest()
+                .authenticated().and()
+                // .formLogin().and()
+                .httpBasic();
+
     }
 }
+
