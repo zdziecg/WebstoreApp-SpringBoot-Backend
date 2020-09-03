@@ -30,10 +30,11 @@ public class UserRestController {
     private PasswordEncoder passwordEncoder;
 
     @Autowired
-    public UserRestController(UserService userService, TokenRepository tokenRepository, UserRepository userRepository) {
+    public UserRestController(UserService userService, TokenRepository tokenRepository, UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userService = userService;
         this.tokenRepository = tokenRepository;
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @RequestMapping("/login")
@@ -52,7 +53,8 @@ public class UserRestController {
            }
 
         }
-        user.setRole("ROLE_CLIENT");
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setRole("ROLE_GUEST");
         userService.saveUser(user);
         return user;
     }
@@ -75,7 +77,7 @@ public class UserRestController {
         if (userObj == null){
             throw new Exception("Bad username or password");
         }
-        else if(!userObj.isEnabled()){
+        else if(!user.isEnabled()){
             throw new Exception("Confirm registration ");
         }
         return userObj;
@@ -128,6 +130,7 @@ public class UserRestController {
         Token byValue = tokenRepository.findByValue(value);
         User user = byValue.getUser();
         user.setEnabled(true);
+        user.setRole("ROLE_USER");
         userRepository.save(user);
 
         return "Poprawna rejestracja ";

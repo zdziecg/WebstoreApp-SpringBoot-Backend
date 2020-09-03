@@ -28,15 +28,15 @@ public class Start {
         usertwo.setUsername("Test");
         usertwo.setPassword(passwordEncoder.encode("Test"));
         usertwo.setUserMail("test@gmail.com");
-        usertwo.setRole("Role_Client");
+        usertwo.setRole("ROLE_USER");
         usertwo.setEnabled(true);
 
         User t = new User();
         t.setUsername("1234");
         t.setPassword(passwordEncoder.encode("1234"));
         t.setUserMail("hgfd.kamil@gmail.com");
-        t.setRole("Role_Client");
-        t.setEnabled(true);
+        t.setRole("ROLE_USER");
+        t.setEnabled(false);
 
 
         userRepository.save(user);
