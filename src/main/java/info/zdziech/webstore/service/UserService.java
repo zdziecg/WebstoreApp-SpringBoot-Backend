@@ -77,7 +77,7 @@ public class UserService {
         Context context = new Context();
         context.setVariable("header", "Thank you for registration " + user.getUsername());
         context.setVariable("title", "\n" + "Click on the link below to confirm your registration");
-        context.setVariable("description", "http://localhost:7776/token?value=" + tokenValue);
+        context.setVariable("description", "https://zdziecg-webstore.herokuapp.com/token?value=" + tokenValue);
         String body = templateEngine.process("template", context);
         try {
             mailService.sendMail(user.getUserMail(), "Confirm registration!", body, true);
