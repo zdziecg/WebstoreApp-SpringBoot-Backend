@@ -1,15 +1,15 @@
 package info.zdziech.webstore.controller;
 
 
-        import info.zdziech.webstore.model.Product;
-        import info.zdziech.webstore.service.ProductServiceImpl;
-        import org.springframework.beans.factory.annotation.Autowired;
-        import org.springframework.web.bind.annotation.*;
+import info.zdziech.webstore.model.Product;
+import info.zdziech.webstore.service.ProductServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-        import java.util.Optional;
+import java.util.Optional;
 
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins="https://zdziecg-webstore.herokuapp.com")
 @RestController
 @RequestMapping("menage/products")
 public class ProductRestController {

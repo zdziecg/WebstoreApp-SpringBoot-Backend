@@ -19,7 +19,7 @@ import java.security.Principal;
 import java.util.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins="https://zdziecg-webstore.herokuapp.com")
 public class UserRestController {
 
 
