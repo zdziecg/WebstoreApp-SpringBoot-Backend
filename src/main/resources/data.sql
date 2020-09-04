@@ -19,21 +19,21 @@ VALUES ('Shirt', 'Casual Shirt imported from France','Fashion', 3, 15.00);
 INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
 VALUES ( 'Office Bag', 'Leather bag imported from USA', 'Fashion', 40, 1000.00);
 INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
-VALUES ('Tablet', 'Hot Water Bottles', 'Electronics',80, 450.45);
+VALUES ('Tablet', 'Tablet with a stylus for drawing ', 'Electronics',80, 450.45);
 INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
-VALUES ('Wrist Watch', 'Imported wrist watches from swiss', 'Electronics',800, 2500.00);
+VALUES ('Wrist Watch', 'Imported wrist watches from swiss', 'Electronics',800, 250.00);
 INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
-VALUES ('Mobile Phone', '3G/4G capability', 'Electronics',700, 45000.00);
+VALUES ('Mobile Phone', '3G/4G capability', 'Electronics',700, 4500.00);
 INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
 VALUES ('Shampoo', 'Head and Shoulders Shampoo', 'Health',500, 300.00);
 INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
-VALUES ('Leather Wallets', 'Imported Leather Wallets from AUS', 'Fashion',1000, 500.00);
+VALUES ('Leather Wallets', 'Imported Leather Wallets from AUS', 'Fashion',100, 5.00);
 INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
-VALUES ('Shoes', 'Imported Canon camera from USA', 'Fashion',10, 85000.00);
+VALUES ('Shoes', 'Kasketball shoes from USA', 'Fashion',10, 850.00);
 INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
 VALUES ('Ball', 'Head and Shoulders Shampoo', 'Sport',500, 300.00);
 INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
-VALUES ('Laptop', 'Imported Leather Wallets from AUS', 'Electronics',1000, 500.00);
+VALUES ('Laptop', '8GB RAM, i7-850', 'Electronics',1000, 5000.00);
 
 
 insert into cart (status,  grand_total)

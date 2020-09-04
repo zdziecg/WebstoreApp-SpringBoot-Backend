@@ -48,7 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //for h2 database concole log
         http.headers().frameOptions().disable();
         http.csrf().disable().authorizeRequests()
-                .antMatchers("/basicauth").access("hasRole('ROLE_USER')")
+//                .antMatchers("/basicauth").access("hasRole('ROLE_USER')")
                 .antMatchers("/menage/products/**", "/registeruser", "/checkUserName", "/**").permitAll()
                 .antMatchers(HttpMethod.OPTIONS, "/greeting", "/basicauth", "/loginuser", "/user", "**/swagger-resources/**", "/api/orders/**")
                 .permitAll().anyRequest()
