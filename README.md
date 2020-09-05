@@ -2,7 +2,7 @@
 Beckend part of the web application of the full stack webstore. 
 The frontend part is available in the link: https://github.com/zdziecg/WebstoreApp-Angular-Frontend
 
-h1 Live Demo Full Stack Websore: https://zdziecg-webstore.herokuapp.com/#/
+Live Demo Full Stack Websore: https://zdziecg-webstore.herokuapp.com/#/
 This is a Single Page Appliaction using Spring Boot 2 and Angular 9.
 
 # REST API that allows the following functionalities:
