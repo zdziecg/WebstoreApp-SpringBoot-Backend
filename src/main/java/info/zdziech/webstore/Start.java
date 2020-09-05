@@ -1,6 +1,5 @@
 package info.zdziech.webstore;
 
-import info.zdziech.webstore.repository.CartRepository;
 import info.zdziech.webstore.repository.UserRepository;
 import info.zdziech.webstore.model.User;
 import org.springframework.context.annotation.Configuration;
@@ -10,8 +9,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class Start {
 
     private UserRepository userRepository;
-    private CartRepository cartRepository;
-
 
     public Start (UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;

@@ -1,7 +1,6 @@
 package info.zdziech.webstore.controller;
 
 
-import info.zdziech.webstore.model.Product;
 import info.zdziech.webstore.model.Token;
 import info.zdziech.webstore.model.User;
 import info.zdziech.webstore.repository.TokenRepository;
@@ -19,7 +18,7 @@ import java.security.Principal;
 import java.util.*;
 
 @RestController
-@CrossOrigin(origins="https://zdziecg-webstore.herokuapp.com")
+@CrossOrigin(origins="http://localhost:4200")
 public class UserRestController {
 
 
@@ -87,44 +86,6 @@ public class UserRestController {
         return userService.checkUsername(username);
     }
 
-
-    @RequestMapping("/user")
-    public Principal user(HttpServletRequest request) {
-        String authToken = request.getHeader("Authorization").substring("Basic".length()).trim();
-        return () -> new String(Base64.getDecoder().decode(authToken)).split(":")[0];
-    }
-
-    @GetMapping("/hello")
-    public String hello(Principal principal, Model model) {
-        model.addAttribute("name", principal.getName());
-        model.addAttribute("user", new User() );
-        Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication().getAuthorities();
-        Object details = SecurityContextHolder.getContext().getAuthentication().getDetails();
-        model.addAttribute("authorities", authorities);
-        model.addAttribute("details", details);
-        return "hello";
-    }
-
-//    @GetMapping("/users")
-//        public List<User> getUsers() {
-//            return (List<User>) userRepository.findAll();
-//        }
-//
-//        @PostMapping("/users")
-//        void addUser(@RequestBody User user) {
-//            userRepository.save(user);
-//        }
-
-//        @GetMapping("/token")
-//    public User checkUser (@RequestParam String value) {
-//        Token byValue = tokenRepository.findByValue(value);
-//        User user = byValue.getUser();
-//        user.setEnabled(true);
-//        userRepository.save(user);
-//
-//        return user;
-//    }
-
         @GetMapping("/token")
         public String signup (@RequestParam String value) {
         Token byValue = tokenRepository.findByValue(value);
@@ -133,15 +94,9 @@ public class UserRestController {
         user.setRole("ROLE_USER");
         userRepository.save(user);
 
-        return "Poprawna rejestracja ";
+        return "Registration succces ";
     }
 
-
-//    @RequestMapping("/user")
-//    public Principal user(HttpServletRequest request) {
-//        String authToken = request.getHeader("Authorization").substring("Basic".length()).trim();
-//        return () -> new String(Base64.getDecoder().decode(authToken)).split(":")[0];
-//    }
 }
 
 

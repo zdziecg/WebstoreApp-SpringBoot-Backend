@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicLong;
 
-@CrossOrigin(origins="https://zdziecg-webstore.herokuapp.com")
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
 @RequestMapping()
 public class GreetingController {

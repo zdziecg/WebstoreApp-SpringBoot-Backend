@@ -1,14 +1,3 @@
--- DROP TABLE IF EXISTS product;
-
--- create table PRODUCT
--- (
---     product_id   INTEGER auto_increment,
---     product_name VARCHAR not null,
---     category varchar,
---     description  VARCHAR not null,
---     unitsInStock     INTEGER,
---     price        DECIMAL not null
--- );
 
 INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
 VALUES ('Soap', 'Pears baby soap for Kids','Health', 1, 35.75);
@@ -35,27 +24,3 @@ VALUES ('Ball', 'Head and Shoulders Shampoo', 'Sport',500, 300.00);
 INSERT INTO PRODUCT (product_name, description, category, unitsinstock, price)
 VALUES ('Laptop', '8GB RAM, i7-850', 'Electronics',1000, 5000.00);
 
-
-insert into cart (status,  grand_total)
-values ('created',1);
-insert into  items (quantity, product_id, cart_id)
-values ( 99,1,1);
-insert into  items (quantity, product_id, cart_id)
-values ( 2,2,1);
-
-
-
-
-
--- CREATE TABLE `Cart` (
---                         `cart_id` int(11),
---                         PRIMARY KEY (`cart_id`)
--- ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
---
--- CREATE TABLE `Items` (
---                          `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
---                          `cart_id` int(11) unsigned NOT NULL,
---                          PRIMARY KEY (`id`),
---                          KEY `cart_id` (`cart_id`),
---                          CONSTRAINT `items_ibfk_1` FOREIGN KEY (`cart_id`) REFERENCES `Cart` (`cart_id`)
--- ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;

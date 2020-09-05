@@ -26,9 +26,9 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 
-@CrossOrigin(origins="https://zdziecg-webstore.herokuapp.com")
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
-@RequestMapping("/api/orders")
+@RequestMapping("orders")
 public class OrderController {
 
     private ProductService productService;

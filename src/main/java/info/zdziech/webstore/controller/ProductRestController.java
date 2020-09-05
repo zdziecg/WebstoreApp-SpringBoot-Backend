@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 
-@CrossOrigin(origins="https://zdziecg-webstore.herokuapp.com")
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
-@RequestMapping("menage/products")
+@RequestMapping("products")
 public class ProductRestController {
 
 
