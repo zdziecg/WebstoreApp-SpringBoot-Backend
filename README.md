@@ -7,7 +7,7 @@ This is a Single Page Appliaction using Spring Boot 2 and Angular 9.
 
 ## REST API that allows the following functionalities:
 
-- User registration requiring confirmation of e-mai.
+- User registration requiring confirmation of e-mail.
 - User can login the site.
 - Order menagment
 - Products catalogue.
