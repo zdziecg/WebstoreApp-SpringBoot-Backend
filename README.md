@@ -6,27 +6,27 @@ The frontend part is available in the link: https://github.com/zdziecg/WebstoreA
 This is a Single Page Appliaction using Spring Boot 2 and Angular 9.
 
 ## REST API that allows the following functionalities:
-...
-User registration requiring confirmation of e-mai.
-User can login the site.
-Order menagment
-Products catalogue.
-The user has access to his orders.
-User can logout after completing.
-...
+
+- User registration requiring confirmation of e-mai.
+- User can login the site.
+- Order menagment
+- Products catalogue.
+- The user has access to his orders.
+- User can logout after completing.
+
 ## Technology Stacks
-...
-Java 12
-Spring Boot 2.2.1.
-Spring Security
-Basic Authentication
-Spring Data JPA
-Hibernate
-H2-Database
-Thymeleaf
-Maven
-Swagger-Cli
-...
+
+- Java 12
+- Spring Boot 2.2.1.
+- Spring Security
+- Basic Authentication
+- Spring Data JPA
+- Hibernate
+- H2-Database
+- Thymeleaf
+- Maven
+- Swagger-Cli
+
 ## Run the Project
 
 1. If you want to use the full stack of application on one port,
